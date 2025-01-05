@@ -28,7 +28,7 @@ class RecommenderNet(tf.keras.Model):
 # Enable eager execution explicitly (if necessary)
 tf.config.run_functions_eagerly(True)
 with tf.keras.utils.custom_object_scope({'RecommenderNet': RecommenderNet}):
-    loaded_model = tf.keras.models.load_model('recommender_model_savedd.h5')
+    loaded_model = tf.keras.models.load_model('recommender_model_savedd.h5', compile=False)
 
 # Load dataset (merged_df and sample_df must be preprocessed beforehand)
 sample_df = pd.read_csv("sample_df.csv")
